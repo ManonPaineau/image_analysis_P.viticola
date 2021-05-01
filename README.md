@@ -17,12 +17,14 @@ The R script allows to recover the sporulation area, in percentage, of each disc
 
 
 
-##  image caracteristics: - images are homogeneous as most as possible (light, pixel, quality, etc.)
+##  image caracteristics: 
+			  - images are homogeneous as most as possible (light, pixel, quality, etc.)
 			  - composed with a maximum of four leaf discs of equivalent size
 			  - the leaf discs are circular and green, the sporulation is white and can be distinguished from the leaf (green/white contrast)
  			  - the discs are on a white and homogeneous background 
 
-##  macro caracteristics: - the imageJ macro was developed on ImageJ version 1.52a
+##  macro caracteristics: 
+			  - the imageJ macro was developed on ImageJ version 1.52a
   		  	  - the pluggin was used on a Windows10 computer, with 16GB RAM, processor Intel Core i5 
 			  - the minimum required to lounch the macro was not tested
 
@@ -54,6 +56,7 @@ The R script allows to recover the sporulation area, in percentage, of each disc
 		  	 + a RoiSet file for each images 
 		 	 + an image for visual verification of what is detected on each images
   NB: the macro consider a "normal" image if there is four discs. If not, it save the RGB image for you to verify if it is normal to have less than four discs
+  
 		2. The identification step writes a report with the disc area of each disk identified in the outputDir folder
  		  	 + an individual image per disc 
 
@@ -64,6 +67,7 @@ The R script allows to recover the sporulation area, in percentage, of each disc
 		   the macro asks you to choose a thresholds (in the threshol window) to identify the sporulation by comparison with the original RGB images
 		   you can deplace deplace the windows of imageJ at you convenience.
                    The results images is saved in the particlesDir directory : black pixel correspond to the sporulation
+		   
   NB: In the case of an analysis of several hundred discs, this analysis can be done in bins.
 
 		4. All binary images from the partclesDir will be analyse to save the sporulation area in pixel in the results file.
@@ -71,10 +75,20 @@ The R script allows to recover the sporulation area, in percentage, of each disc
 
 
 ##  How to retrieve the results from all these output files? 
-	You should have two .cvs files : 'Results.cvs' in the particlesDir and 'report_disk_area.cvs' in the outputDir folder
-	
 
-  ###  you can use the R script 'scriptR_SporulationPercentage_Calculation' which give the following information :
+You should have two .cvs files : 'Results.cvs' in the particlesDir and 'report_disk_area.cvs' in the outputDir folder
+In your personal data table, indicate the location of your discs in the 4-disks images as follow:
+				
+						A = upper left
+						B = upper right
+						C = bottom left
+						D = bottom right
+
+The individual name of your images associated with the location of the disks will be used as you disk identifier.
+
+  ###  With R 
+  
+  you can use the R script 'scriptR_SporulationPercentage_Calculation' which give the following information :
 						- ImageName
 						- location
 						- areaDisk
@@ -85,14 +99,8 @@ The R script allows to recover the sporulation area, in percentage, of each disc
 
   ###  the informations you need if you prefer to do it by another way: 
 
-		identification : "results" : first column ('Slice') correspond to the imageName-location-.tiff
-					     the location of the disc on the image:
-						A = upper left
-						B = upper right
-						C = bottom left
-						D = bottom right
-
-		Sporulation percentage = sporulation_Area / disc_Area
+		- Identification : "results" : first column ('Slice') correspond to the imageName-location-.tiff
+		- Sporulation percentage = sporulation_Area / disc_Area
 				sporulation_Area = in "Results", it corresponds to the third column 'Total Area' 
 				disc_Area = in "report_disk_area", it corresponds to the second column 'Area'
 

@@ -33,10 +33,12 @@ The R script allows to recover the sporulation area, in percentage, of each disc
 
   The full macro can be used in one shot or be split into each functions.	
   For the user's convenience when analyzing a lot of images, it is recommended to use the four-step script: 
-  	step1: disk detection
-	step2: disk identification
-	step3: sporulation measurement (manual step)
-	step4: saving the results. 
+  
+  	- step1: disk detection
+	- step2: disk identification
+	- step3: sporulation measurement (manual step)
+	- step4: saving the results
+	
   NB: a visual verification of the correct operation of the steps can be realized between each step
 
 

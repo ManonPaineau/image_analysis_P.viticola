@@ -2,7 +2,7 @@
 
 				by: Manon PAINEAU
 				published in: 
-				contact: 
+				contact: manonpaineau33@gmail.com
 
 
 The following imageJ script is intended to measure the sporulation surface of Plasmopara viticola on grape leaf discs in a laboratory experiment (leaf disc bioessay). 
@@ -97,7 +97,7 @@ Open the macro on ImageJ and follow the instructions.
 At the end of the step 1, you can close all the windows without saving anything.
 
 The detection step analyse all your images present in the inputDir and detect the number of disks per images. It:
-			 + writes in the outputDir folder a first report recording the number of discs detected on each images 
+			 + generate in the outputDir folder a first report recording the number of discs detected on each images 
 		  	 + saves a RoiSet file for each images. It is the records of the precise perimeter of the disks.
 		 	 + save an image for visual verification of what is detected on each images. 
 		 	 

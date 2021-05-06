@@ -90,9 +90,11 @@ The setting are done ! dont't forget to save the script. You can close all the i
 
 Open the macro on ImageJ and follow the instructions.
 
-	         ImageJ > Pluggin > Macro > run > Macro_P.viticola_Sporulation_step1
+	         ImageJ > Plugins > Macro > run > Macro_P.viticola_Sporulation_step1
 		 select the inputDir : the folder with all your images
 		 select the outputDir : it is automatically created in your inputDir folder
+
+At the end of the step 1, you can close all the windows without saving anything.
 
 The detection step analyse all your images present in the inputDir and detect the number of disks per images. It:
 			 + writes in the outputDir folder a first report recording the number of discs detected on each images 
@@ -114,7 +116,7 @@ The detection step analyse all your images present in the inputDir and detect th
    - other problems ? you can edit directly the image in imageJ or by other methodology. 
   	Make sure to not change the name of the image. hope it does not happend to offen !
   
-  At the end of the step 1, you can close all the windows without saving anything.
+
   
 ### STEP 2 Identification
 		 
@@ -129,7 +131,7 @@ The identification step identify each disks and give them an identifier : ImageN
 
 Open the macro on ImageJ and follow the instructions.
 
-	         ImageJ > Pluggin > Macro > run > Macro_P.viticola_Sporulation_step2
+	         ImageJ > Plugins > Macro > run > Macro_P.viticola_Sporulation_step2
 		 select the inputDir : the folder with all your images
 		 select the outputDir : the folder with all the RoiSet
 
@@ -145,22 +147,25 @@ If you proceed by bins of images:
 
 Open the macro on ImageJ and follow the instructions.
 
-	         ImageJ > Pluggin > Macro > run > Macro_P.viticola_Sporulation_step3
+	         ImageJ > Plugins > Macro > run > Macro_P.viticola_Sporulation_step3
 		 select the inputDir : the folder with all your images
 		 select the outputDir : the folder with the individual discs images
-		 select the particlesDor : the folder where your results will be saved: the binary images
+		 select the particlesDor (automaticaly created) : the folder where your results will be saved: the binary images
 
-Many imageJ wondows will be automaticcaly open. Don't close any but disposed them on your screen at your convenience: 
+Many imageJ windows will be automaticaly open. Don't close any but disposed them on your screen at your convenience: 
 the ones you need to be visible: 
    - the threshold window
-   - the message window
+   - the message window 'Action Required'
    - the original image in color for you to compare
-   - the working image: the disc is mostly red
+   - the working image 'Saturation': the disc is mostly red
  
                  the working images is selected
-		 choose the threshold to detect what is sporulation and what is not : change only the first cursor
+		 choose the threshold in the 'Threshold' window to detect what is sporulation and what is not : change only the first cursor
 		 the red corresponds to the leaf and is therefore not considered as sporulation. the red 'frames' the sporulation.
-		 once your threshold chosed, click on 'Apply' int the threshold window and 'OK' in the message window to preceed at the next image
+		 This steps is crutial, try to be the most precise as possible !
+		 once your threshold is chosed, click on 'Apply' int the threshold window and 'OK' in the message window to proceed to the next image
+		 at the end, you can close all the windows
+
 
 The results images (binary images) is saved in the particlesDir directory : black pixel correspond to the sporulation
 You can quickly check that the binary images are correct : sporulation is black on a white background.	
@@ -178,8 +183,9 @@ All binary images from the particlesDir will be analyse to save the sporulation 
 
 Open the macro on ImageJ and follow the instructions.
 
-	         ImageJ > Pluggin > Macro > run > Macro_P.viticola_Sporulation_step4
+	         ImageJ > Plugins > Macro > run > Macro_P.viticola_Sporulation_step4
 		 select the inputDir : the folder with all your images
+		 select the outputDir
 		 select the particlesDir : the folder whith all the binary images and where your results will be saved: results.csv 
 
 Once it is done, you can close imageJ : the image analysis is finished !

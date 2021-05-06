@@ -66,8 +66,7 @@ This need to be done only once for all your images of the same experiment.
    - size of the disks. The script uses the pixels as order of measurement. Choose the adapted area of discs you want to detect. If the area is too small, wrong detection will be done, if it is too big, some discs will be missed.
   
    		line 124 in the full script or line 85 in the step1: modify the area of your discs in pixel "size=1200000" 
-			
-                what is the area of your discs ?
+	        what is the area of your discs ?
 	        on imageJ > open an image by dragging it directly into the imageJ window
 	        select Wand (tracing) tool > click on you disc > double click on Wand >
 	        tick the "smooth if thresholded" > ajust the tolerance > OK >

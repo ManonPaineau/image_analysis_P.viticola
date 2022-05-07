@@ -1,8 +1,7 @@
 # ImageJ macro aiming to measure the sporulation area of Downy mildew sporulation on grapevine leaf discs
 
 				by: Manon PAINEAU
-				published in: 
-	<The characterization of pathotypes in grapevine downy mildew provides insights into the breakdown of Rpv3, Rpv10 and Rpv12 factors in grapevines> Phytopathology(r) 
+				published in: [DOI]
 
 
 The following imageJ script is intended to measure the sporulation surface of Plasmopara viticola on grape leaf discs in a laboratory experiment (leaf disc bioessay). 

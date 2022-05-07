@@ -2,6 +2,7 @@
 
 				by: Manon PAINEAU
 				published in: [DOI]
+				version: 2021
 
 The following imageJ scripts are intended to measure the sporulation surface of Plasmopara viticola on grape leaf discs in a laboratory experiment (leaf disc bioessay). 
 A total of six script are available: the full imageJ macro, the four splitted steps (see below) and the R script used to retrieve the results (see below).

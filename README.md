@@ -154,7 +154,7 @@ If you proceed by bins of images, you can stop the macro when you want just by c
 	         ImageJ > Plugins > Macro > run > Macro_P.viticola_Sporulation_step3
 		 select the inputDir : the folder with all your images
 		 select the outputDir : the folder with the individual discs images
-		 select the particlesDor (automaticaly created) : the folder where your results will be saved: the binary images
+		 select the particlesDir (automaticaly created) : the folder where your results will be saved: the binary images
 
 Many imageJ windows will be automaticaly open. Don't close any but disposed them on your screen at your convenience: 
 the ones you need to be visible: 
@@ -163,19 +163,19 @@ the ones you need to be visible:
    - the original image in color for you to compare
    - the working image 'Saturation': the disc is mostly red
  
-                 the working images is selected
-		 choose the threshold in the 'Threshold' window to detect what is sporulation and what is not : change only the first cursor
-		 the red corresponds to the leaf and is therefore not considered as sporulation. the red 'frames' the sporulation.
-		 This steps is crutial, try to be the most precise as possible !
-		 once your threshold is chosed, click on 'Apply' in the threshold window and 'OK' in the message window to proceed to the next image
-		 at the end, you can close all the windows
+                 --the working images must be selected
+		 --choose the threshold in the 'Threshold' window to detect what is sporulation and what is not : change only the first cursor
+		 --the red corresponds to the leaf and is therefore not considered as sporulation. the red 'frames' the sporulation.
+		 --This steps is crutial, try to be the most precise as possible !
+		 --once your threshold is chosed, click on 'Apply' in the threshold window and 'OK' in the message window to proceed to the next image
+		 --at the end, you can close all the windows
 
 
 What has been done:
 The results images (binary images) is saved in the 'particlesDir' directory : black pixel correspond to the sporulation
 You can quickly check that the binary images are correct : sporulation is black on a white background.	
 
-NB: analyse by bins: don't forget to remove the individuals images of the outputDir in another folder once your're done with them to not analysed them twice !
+NB: in case of analyse by bins: don't forget to remove the individuals images from the outputDir to another folder ('image_analysed' for exempe) once your're done with them to not analysed them twice!
 
 
 #### dealing with sporulation errors	
@@ -183,7 +183,7 @@ NB: analyse by bins: don't forget to remove the individuals images of the output
 In the case of a very sporulating disc, the binary image can be reversed: the sporulation is in white and not in black. To correct this and put the sporulation in black: 
 
                  on imageJ > open the binary image by dragging it directly into the imageJ window
-		 Image > Color > edit LUT > invert > OK > Save and replace it whith the wrong bnary image
+		 Image > Color > edit LUT > invert > OK > Save and replace it whith the wrong binary image
 
 ### STEP 4 Measurements
 
@@ -196,7 +196,7 @@ Open the macro on ImageJ and follow the instructions.
 		 select the outputDir
 		 select the particlesDir : the folder whith all the binary images and where your results will be saved: results.csv 
 
-Once it is done, you can close imageJ : the image analysis is finished !
+Once it is done, you can quit imageJ : the image analysis is finished !
 
 
 ##  How to retrieve the results from all these output files? 

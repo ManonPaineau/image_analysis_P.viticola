@@ -64,22 +64,27 @@ This need to be done only once for all your images of the same experiment.
 		
    - size of the disks. The script uses the pixels as order of measurement. Choose the adapted area of discs you want to detect. If the area is too small, wrong detection will be done, if it is too big, some discs will be missed.
   
-   		line 124 in the full script or line 85 in the step1: modify the area of your discs in pixel "size=1200000" 
-	        what is the area of your discs ?
-	        on imageJ > open an image by dragging it directly into the imageJ window
-	        select Wand (tracing) tool > click on you disc > double click on Wand >
-	        tick the "smooth if thresholded" > ajust the tolerance > OK >
+   Do it line 124 in the full script or line 85 in the step1: modify the area of your discs in pixel "size=1200000" 
+	        
+   what is the area of your discs ?
+   = on imageJ > open an image by dragging it directly into the imageJ window
+	       
+	        select Wand (tracing) tool > click on your disc > double click on Wand >
+	        tick the "smooth if thresholded" > ajust the tolerance (the yellow perimeter of the selected disc) > OK >
 	        type T to open the ROI manager > click on Measure >
 	        the area, in pixel, of your disc is in the column "area"
 		
+   do this for several disks of visually varying size and then choose a smaller size for all your disks to ensure good detection of all disks. Example: measured sizes 144987, 1357987, 1267854, 1479870. Size chosen in the script = 1200000 pixels.
 		
    - center of the image in pixels. The center of the images is used to detect the place of the disc on the image which allow the macro to identify the disc. You need to give the average coordinate center of all ypur images.
    
-   		in the script line 187 or line 70 in the step2 : indicate the coordinates, in pixels, of the average center of your images. 
-	        on imageJ > open an image by dragging it directly into the imageJ window
-	        pass your mouse over the center of the image. 
-	        The coordinates of your mouse are indicated in the imageJ window
-	        do it for few images and change the A and B value in the scrip line 187: x=A , y=B
+   Do it in the script line 187 or line 70 in the step2 : indicate the coordinates, in pixels, of the average center of your images. 
+	        
+   = on imageJ > open an image by dragging it directly into the imageJ window
+	       
+	       pass your mouse over the center of the image. 
+	       The coordinates of your mouse are indicated in the imageJ window.
+	       do it for few images and change the A and B value in the scrip line 187: x=A , y=B
 
 
 The setting are done ! dont't forget to save the script. You can close all the imagesJ windows and finaly start the image analysis !
@@ -87,7 +92,7 @@ The setting are done ! dont't forget to save the script. You can close all the i
 
 ### STEP 1: Detection 
 
-Open the macro on ImageJ and follow the instructions.
+==> Open the macro on ImageJ and follow the instructions.
 
 	         ImageJ > Plugins > Macro > run > Macro_P.viticola_Sporulation_step1
 		 select the inputDir : the folder with all your images
@@ -95,56 +100,56 @@ Open the macro on ImageJ and follow the instructions.
 
 At the end of the step 1, you can close all the windows without saving anything.
 
-The detection step analyse all your images present in the inputDir and detect the number of disks per images. It:
-			 + generate in the outputDir folder a first report recording the number of discs detected on each images 
+What has been done:
+The detection step analyses all your images present in the inputDir and detect the number of disks per images. It:
+			 + generates in the outputDir folder a first report recording the number of discs detected on each images 
 		  	 + saves a RoiSet file for each images. It is the records of the precise perimeter of the disks.
-		 	 + save an image for visual verification of what is detected on each images. 
+		 	 + saves an image for visual verification of what is detected on each images. 
 		 	 
   NB: the macro consider a "normal" image if there is four discs. If not, it save the RGB image for you to verify if it is normal to have less than four discs
  
  #### dealing with detection errors
  
- The macro is not perfect, the main errors happend in this detection part.
-   - many discs are not detected: your "size" in the setting is too big
-   - bits of discs at the edge of the image are detected that should not be
-
-                 your "size" in the setting is too little
-		 you can manually truncate your images, making sure that the center of the image remains in the middle of the four discs. 
-		 The size of the disks will not be impacted even if the image looks bigger.
+ The macro is not perfect, the main errors can happend in this detection step.
+   - many discs are not detected: your "size" in the setting is too big.
+   
+   - part of discs at the edge of the image are detected and should not be detected: your "size" in the setting is too little.
+		If this happens for just few images, you can manually truncate your images, making sure that the center of the image remains in the middle of the four discs. The size of the disks (in pixels) will not be impacted even if the image looks bigger.
 
    - other problems ? you can edit directly the image in imageJ or by other methodology. 
-  	Make sure to not change the name of the image. hope it does not happend to offen !
+  	Make sure to not change the name of the image.
   
 
   
 ### STEP 2 Identification
-		 
-The identification step identify each disks and give them an identifier : ImageName-location-.tiff
-			 + writes a report with the disc area of each disk identified in the outputDir folder:
-			 	report_disk_area.csv: you will need it later to retrieve the results.
- 		  	 + an individual image per disc: you can check on these images that everythig goes as you want.
 
-  NB: this step can be time consumming for a lot of images
-  NB: step 1 and 2 must be done on all the images at the same time : nothing must be done at the same time on the computer when imageJ is running.
-
-
-Open the macro on ImageJ and follow the instructions.
+==> Open the macro on ImageJ and follow the instructions.
 
 	         ImageJ > Plugins > Macro > run > Macro_P.viticola_Sporulation_step2
 		 select the inputDir : the folder with all your images
 		 select the outputDir : the folder with all the RoiSet
+		 
+At the end of the step 2, you can close all the windows without saving anything.
+
+What has been done:
+The identification step identify each disks and give them an identifier name : ImageName-location-.tiff:
+			 - writes a report with the disc area of each disk identified in the outputDir folder:
+			 	report_disk_area.csv: you will need it later to retrieve the results.
+ 		  	 - an individual image per disc: you can check on these images that everythig goes as you want.
+
+  NB: this step can be time consumming for a lot of images
+  NB: step 1 and 2 must be done on all the images at the same time : nothing must be done at the same time on the computer when imageJ is running to avoid problems.
+
 
 ### STEP 3 Sporulation
 
-Now all your discs are detected and identified, you can proceed to the sporulation measurement.
+Now all your discs are detected and identified, you can proceed to the sporulation measurement (step3).
 This step is semi-automatic. All images of individual disks will be opened one by one. It will be up to you to choose a threshold to detect what is sporulation and what is not. 
-During this step, which can be long depending on your habits, it is advised to proceed by bins of images if you have many.
+During this step, which can be long depending on your habits, it is advised to proceed by bins of images if you have many images to analyse.
 
-If you proceed by bins of images: 
-   - you can stop the macro when you want just by closing ImageJ.
-   - don't forget to remove the individuals images of the outputDir in another folder once your're done with them to not analysed them twice !
+If you proceed by bins of images, you can stop the macro when you want just by closing ImageJ. You won't lose the work already done.
 
-Open the macro on ImageJ and follow the instructions.
+==> Open the macro on ImageJ and follow the instructions.
 
 	         ImageJ > Plugins > Macro > run > Macro_P.viticola_Sporulation_step3
 		 select the inputDir : the folder with all your images
@@ -162,13 +167,17 @@ the ones you need to be visible:
 		 choose the threshold in the 'Threshold' window to detect what is sporulation and what is not : change only the first cursor
 		 the red corresponds to the leaf and is therefore not considered as sporulation. the red 'frames' the sporulation.
 		 This steps is crutial, try to be the most precise as possible !
-		 once your threshold is chosed, click on 'Apply' int the threshold window and 'OK' in the message window to proceed to the next image
+		 once your threshold is chosed, click on 'Apply' in the threshold window and 'OK' in the message window to proceed to the next image
 		 at the end, you can close all the windows
 
 
-The results images (binary images) is saved in the particlesDir directory : black pixel correspond to the sporulation
+What has been done:
+The results images (binary images) is saved in the 'particlesDir' directory : black pixel correspond to the sporulation
 You can quickly check that the binary images are correct : sporulation is black on a white background.	
-	
+
+NB: analyse by bins: don't forget to remove the individuals images of the outputDir in another folder once your're done with them to not analysed them twice !
+
+
 #### dealing with sporulation errors	
 
 In the case of a very sporulating disc, the binary image can be reversed: the sporulation is in white and not in black. To correct this and put the sporulation in black: 

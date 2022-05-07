@@ -2,11 +2,11 @@
 
 				by: Manon PAINEAU
 				published in: 
-				contact: manonpaineau33@gmail.com
+	<The characterization of pathotypes in grapevine downy mildew provides insights into the breakdown of Rpv3, Rpv10 and Rpv12 factors in grapevines> Phytopathology(r) 
 
 
 The following imageJ script is intended to measure the sporulation surface of Plasmopara viticola on grape leaf discs in a laboratory experiment (leaf disc bioessay). 
-The script can be freely adapted to your own experimentation, please quote the script as follows when using it: 
+The script can be freely adapted to your own experimentation, please quote this repository when using it.
 
 
 Between each step of the image analysis, temporary files are saved to allow you to visually check that the discs have been correctly detected, errors may occur. Once the analysis is complete, they can be deleted.

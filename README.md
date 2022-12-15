@@ -1,7 +1,7 @@
 # ImageJ macro aiming to measure the sporulation area of Downy mildew sporulation on grapevine leaf discs
 
 				by: Manon PAINEAU
-				published in: [DOI]
+				published in: DOI [10.1094/PHYTO-11-21-0458-R]
 				version: 2021
 
 The following imageJ scripts are intended to measure the sporulation surface of Plasmopara viticola on grape leaf discs in a laboratory experiment (leaf disc bioessay). 
@@ -27,7 +27,7 @@ The R script allows to recover the sporulation area, in percentage, of each disc
 
    - the imageJ macro was developed on ImageJ version 1.52a
    - the pluggin was used on a Windows10 computer, with 16GB RAM, processor Intel Core i5 
-   - NB: the minimum required to lounch the macro was not tested
+   - NB: the minimum required to launch the macro was not tested
 
 
 ##  How to use the imageJ macro:
